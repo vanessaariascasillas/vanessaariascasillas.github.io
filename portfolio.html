@@ -1,17 +1,97 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Leaflet Test</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div id="map" style="height:400px;"></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    const map = L.map('map').setView([34.05,-118.25], 7);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-  </script>
+<header>
+    <h1>Portfolio</h1>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="education.html">Education & Experience</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="publications.html">Research Publications</a>
+        <a href="service.html">Service</a>
+        <a href="teaching.html">Teaching</a>
+    </nav>
+</header>
+
+<main>
+    <section>
+        <h2>Workshop Designs</h2>
+
+        <a href="https://github.com/CMC-QCL/Excel_1" title="Excel (Level 1 – Data) Workshop" target="_blank">
+            Excel (Level 1 – Data) Workshop
+        </a><br>
+        <a href="https://github.com/CMC-QCL/Excel_2" title="Excel (Level 2) Workshop" target="_blank">
+            Excel (Level 2) Workshop
+        </a>
+
+        <h2>Map Designs</h2>
+        <a href="https://arcg.is/1TvrHT" title="Map used for teaching basics of ArcGIS Online without Analysis"
+           target="_blank">
+            Map used for teaching basics of ArcGIS Online without Analysis
+        </a>
+
+        <h2>Story Maps</h2>
+        <a href="https://arcg.is/05HenT0" title="ArcGIS Online: A very basic introduction" target="_blank">
+            ArcGIS Online: A very basic introduction
+        </a>
+
+
+        <h2>Instructional Videos</h2>
+        <div class="video-wrapper">
+            <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/J5ijwRePAGo"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/zrhoz_wpX6E"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <div class="video-wrapper">
+            <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/3aNgQ6aXW5g"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <p>Each video above is from the <a href="https://online.cmc.edu/virtual-events-video-library"
+                                           title="Excel (Level 2) Workshop" target="_blank" Virtual Program Library>
+            Virtual Program Library</a> hosted by Claremont McKenna College’s Alumni and Parent Engagement.</p>
+
+        <div class="video-wrapper">
+            <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/3fb1y2HFbWA"
+                    frameborder="0"
+                    allowfullscreen>
+            </iframe>
+        </div>
+
+        <p>This video is 15 min sample demo of the type of workshops I have done.</p>
+
+        <h2>Dashboard Designs</h2>
+        <p>More To Come…</p>
+    </section>
+
+</main>
 </body>
 </html>
