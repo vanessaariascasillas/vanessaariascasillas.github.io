@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Education & Experience</title>
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Leaflet CSS -->
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+<header>
+    <h1>Vanessa Arias Casillas</h1>
+    <h3>Teacher-Scholar Showcase</h3>
+    <nav>
+        <a href="../index.html">Home</a>
+        <a href="education.html">Education & Experience</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="publications.html">Research Publications</a>
+        <a href="service.html">Service</a>
+        <a href="teaching.html">Teaching</a>
+    </nav>
+</header>
+
+<main>
+    <h2>Education & Experience</h2>
+
+    <section>
+        <h2>Education</h2>
+        <ul>
+            <p><b>Ph.D. in Information Systems and Technology | 2024</b><br>
+                Claremont Graduate University | Claremont, Ca</p>
+            <p><b>Master of Science in Information Systems and Technology | 2022</b><br>
+                Claremont Graduate University | Claremont, Ca</p>
+            <p><b>Master of Business Administration emphasis in GIS | 2017</b><br>
+                University of Redlands | Redlands, Ca</p>
+            <p><b>Bachelor of Arts in Latino Studies | 2010</b><br>
+                San Francisco State University | San Francisco, Ca</p>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Experience</h2>
+        <ul>
+            <p><b>Professor of Practice | August 2024 – Present</b><br>
+                California Institute of Advanced Management | Alhambra, Ca</p>
+            <p><b>Program Coordinator, QCL | July 2024 – Present</b><br>
+                Claremont McKenna College | Claremont, Ca</p>
+            <p><b>Program Assistant, QCL | July 2023 – June 2024</b><br>
+                Claremont McKenna College | Claremont, Ca</p>
+            <p><b>Administrative Assistant, QCL | March 2023 – June 2023</b><br>
+                Claremont McKenna College | Claremont, Ca</p>
+            <p><b>Graduate Fellow, QCL | August 2021 – June 2023</b><br>
+                Claremont McKenna College | Claremont, Ca</p>
+            <p><b>School Bookings and Group Sales Specialist | August 2013 – March 2020</b><br>
+                City of Rancho Cucamonga | Rancho Cucamonga, Ca</p>
+            <p><b>Administrative Intern | February 2018 – June 2018</b><br>
+                City of Rancho Cucamonga | Rancho Cucamonga, Ca</p>
+
+            <p>
+                See more experience on
+                <a href="https://www.linkedin.com/in/vanessaariascasillas/" title="Vanessa’s LinkedIn" target="_blank">
+                    Vanessa's LinkedIn
+                </a>
+            </p>
+        </ul>
+    </section>
+
+    <section>
+        <section>
+            <h2>Academic Journey</h2>
+            <h3>Education Map</h3>
+            <div id="map" style="height:400px; border-radius:10px;"></div>
+        </section>
+</main>
+
+<!-- Leaflet JS -->
+<script
+        src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+    // Schools data
+    const schools = [
+        {name: "Claremont Graduate University", degree: "Ph.D. (2024)", coords: [34.1042, -117.7063]},
+        {name: "Claremont Graduate University", degree: "M.S. (2022)", coords: [34.1042, -117.7063]},
+        {name: "University of Redlands", degree: "MBA (2017)", coords: [34.0623, -117.1684]},
+        {name: "San Francisco State University", degree: "B.A. (2010)", coords: [37.7219, -122.4782]},
+        {name: "Fontana High School", degree: "High School Diploma (2006)", coords: [34.0922, -117.4350]}
+    ];
+
+    // Initialize map
+    const map = L.map('map');
+
+    // Add tile layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Custom marker icon
+    const markerIcon = L.icon({
+        iconUrl: 'https://cdn-icons-png.flaticon.com/512/684/684908.png',
+        iconSize: [30, 30]
+    });
+
+    // Add markers
+    const markers = [];
+    schools.forEach(school => {
+        const marker = L.marker(school.coords, {icon: markerIcon})
+            .bindPopup(`<b>${school.name}</b><br>${school.degree}`)
+            .addTo(map);
+        markers.push(marker);
+    });
+
+    // Fit map to show all markers
+    const group = L.featureGroup(markers);
+    map.fitBounds(group.getBounds().pad(0.2)); // pad adds some space around edges
+</script>
+
+<div class="map-table-container">
+    <table>
+        <tr>
+            <td><b>Ph.D. in Information Systems and Technology | 2024
+                Claremont Graduate University | Claremont, Ca</b></td>
+            <td>• My dissertation explores California’s unique climate that supports a diverse range of crops, including
+                a study on the potential for sustainable coffee production using the maximum entropy approach and
+                WorldClim data amidst changing climatic conditions.<br>
+                • Designed, conducted, analyzed, and interpreted results of non-causal and causal quantitative research
+                using programs like ATLAS.ti and PLS-SEM within a controlled setting to answer questions within
+                different industries<br>
+                • Conducted qualitative research on the relationship between music and studying using open, axial, and
+                selective coding to interpret the data collection obtained through interviewed surveys
+            </td>
+        </tr>
+        <tr>
+            <td><b>Master of Science in Information Systems and Technology | 2022
+                Claremont Graduate University | Claremont, Ca</b></td>
+            <td>• Designed and implemented data access structure for an existing sales relational database system with
+                two types of users, including indexes, views, and stored procedures using SQL in Microsoft Azure to
+                present an organized schema<br>
+                • Analyzed and visualized network data for Bitcoin OTC platform that contained 6005 users and applied
+                techniques for modeling social network formation and evolution using machine learning to predict if
+                users trust other users<br>
+                • Examined and performed predictive analytics on the 2015 patient characteristics survey data conducted
+                by the New York Office of Mental Health using Microsoft Azure Machine Learning to show a predictive
+                supervised forest algorithm<br>
+                • Developed a strong system design and artifact for an IOS system by creating a prototype model to help
+                reduce cognitive stress and interruption overload daily, published paper for<a
+                        href="https://aisel.aisnet.org/amcis2020/cognitive_in_is/cognitive_in_is/5/" title="AMCIS 2020"
+                        target="_blank">
+                    AMCIS 2020</a></td>
+        </tr>
+        <tr>
+            <td><b>Master of Business Administration emphasis in GIS | 2017
+                University of Redlands | Redlands, Ca</b></td>
+            <td>• Designed and created a marketing plan with two other individuals for a small business within the craft
+                beer industry using ArcGIS and Tableau to analyze new business locations, potential customers, and
+                nearest competition<br>
+                • Completed and ran a cell phone screen manufacture simulated company with four other individuals that
+                focused on the supply and demand of cell phones with four quarters of sales<br>
+                • Created an ESRI story map and a Tableau dashboard on Airbnb Los Angeles using Airbnb public data
+                showing where sellers are violating policies and regulations
+            </td>
+        </tr>
+        <tr>
+            <td><b>Bachelor of Arts in Latino Studies | 2010
+                San Francisco State University | San Francisco, Ca</b></td>
+            <td>• Wrote and published a personal testimonial of the journey to obtain my education and created a poetry
+                publication that was made in Microsoft Word and Microsoft Publisher and was distributed in coffee shops
+                and festivals<br>
+                • Organized a Mission District community Day of the Dead event that served over 2,000 people by
+                assisting all the artists that educated individuals about the Latino culture<br>
+                • Organized a 30-individual conference workshop for a community non-profit organization by educating
+                participants on business plans, licenses, insurance, and payroll systems that helped women obtain a
+                small business<br>
+                • Participated with a group to provide street theater entertainment on Day of the Dead that educated
+                individuals on amazing women in Latino history
+            </td>
+        </tr>
+    </table>
+</div>
+<div class="map-table-container">
+    <section>
+        <h2>Curriculum Vitae</h2>
+        <p>
+            <a href="assets/docs/vanessaariascasillas_cv.pdf" target="_blank">
+                download my CV
+            </a>
+            <embed src="assets/docs/vanessaariascasillas_cv.pdf" type="application/pdf" width="100%" height="600px"/>
+
+        </p>
+
+    </section>
+
+</div>
+</body>
+</html>
